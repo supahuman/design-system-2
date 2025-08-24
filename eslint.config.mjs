@@ -22,23 +22,23 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tseslint,
-      'react': reactPlugin,
+      react: reactPlugin,
     },
     rules: {
       // TypeScript rules
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
-      
+
       // React rules
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
-      
+
       // General rules
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true }],
-      'comma-dangle': ['error', 'always-multiline'],
+      semi: ["error", "always"],
+      quotes: ["error", "single", { avoidEscape: true }],
+      "comma-dangle": ["error", "always-multiline"],
     },
   },
   // JavaScript rules
@@ -54,21 +54,21 @@ export default [
       },
     },
     plugins: {
-      'react': reactPlugin,
+      react: reactPlugin,
     },
     rules: {
       // Essential rules
       'no-undef': 'error',
       'no-unused-vars': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      
+
       // React rules
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
-      
+
       // Formatting
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true }],
+      semi: ['error', 'always'],
+      quotes: ['error', 'single', { avoidEscape: true }],
       'comma-dangle': ['error', 'always-multiline'],
     },
   },
