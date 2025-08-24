@@ -1,2 +1,3 @@
 /node_modules
-/pnpm-lock.yaml
+# Keep lock file for CI/CD and consistent installs
+# /pnpm-lock.yaml
