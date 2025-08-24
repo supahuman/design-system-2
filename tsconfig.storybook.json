@@ -5,11 +5,5 @@
     "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "components/**/*",
-    "utils/**/*",
-    "theme/**/*",
-    "declarations.d.ts",
-    ".storybook/**/*"
-  ]
+  "include": ["components/**/*", "utils/**/*", "theme/**/*", "declarations.d.ts", ".storybook/**/*"]
 }

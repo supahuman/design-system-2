@@ -12,18 +12,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "components/**/*",
-    "utils/**/*",
-    "theme/**/*",
-    "declarations.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "scripts",
-    "tests",
-    "docs",
-    "**/*.test.tsx"
-  ]
+  "include": ["components/**/*", "utils/**/*", "theme/**/*", "declarations.d.ts", "index.ts", ".storybook/**/*", "*.ts", "*.tsx"],
+  "exclude": ["node_modules", "dist", "scripts", "tests", "docs"]
 }

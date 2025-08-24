@@ -1,12 +1,11 @@
-import * as React from "react";
-import styles from "./Input.module.css";
+import * as React from 'react';
+import styles from './Input.module.css';
 
 /**
  * Input props interface extending standard HTML input attributes
  * @interface InputProps
  */
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Optional label for the input */
   label?: string;
   /** Error message to display and set aria-invalid */
@@ -34,19 +33,18 @@ export interface InputProps
 const Input = ({
   label,
   id,
-  "aria-label": ariaLabel,
+  'aria-label': ariaLabel,
   errorMessage,
   helpText,
   required,
   ...props
 }: InputProps) => {
-  const inputId = id || label?.toLowerCase().replace(/\s+/g, "-");
+  const inputId = id || label?.toLowerCase().replace(/\s+/g, '-');
   const helpTextId = helpText ? `${inputId}-help` : undefined;
   const errorId = errorMessage ? `${inputId}-error` : undefined;
 
   // Create a describedby value if we have help text or error message
-  const describedBy =
-    [helpTextId, errorId].filter(Boolean).join(" ") || undefined;
+  const describedBy = [helpTextId, errorId].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={styles.container}>
@@ -55,7 +53,7 @@ const Input = ({
           {label}
           {required && (
             <span className={styles.required} aria-hidden="true">
-              {" "}
+              {' '}
               *
             </span>
           )}
@@ -63,11 +61,11 @@ const Input = ({
       )}
       <input
         id={inputId}
-        className={`${styles.input} ${errorMessage ? styles.inputError : ""}`}
-        aria-label={ariaLabel || label || "Input field"}
-        aria-invalid={errorMessage ? "true" : undefined}
+        className={`${styles.input} ${errorMessage ? styles.inputError : ''}`}
+        aria-label={ariaLabel || label || 'Input field'}
+        aria-invalid={errorMessage ? 'true' : undefined}
         aria-describedby={describedBy}
-        aria-required={required ? "true" : undefined}
+        aria-required={required ? 'true' : undefined}
         {...props}
       />
       {helpText && (

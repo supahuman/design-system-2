@@ -31,7 +31,7 @@ pnpm add @your-org/design-system
 ## Usage
 
 ```tsx
-import { Button, Input } from "@your-org/design-system";
+import { Button, Input } from '@your-org/design-system';
 
 function MyForm() {
   return (

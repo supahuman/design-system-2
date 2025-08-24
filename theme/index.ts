@@ -11,4 +11,3 @@ export default tokens;
 // Import CSS variables into your project
 // This import doesn't return anything but includes the CSS file in your bundle
 import './theme.css';
-

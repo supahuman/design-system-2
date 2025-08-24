@@ -1,13 +1,13 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ["index.ts"],
-  format: ["esm"],
+  entry: ['index.ts'],
+  format: ['esm'],
   dts: true,
   splitting: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom"],
+  external: ['react', 'react-dom'],
   esbuildOptions(options) {
     options.banner = {
       js: `/**
