@@ -16,14 +16,11 @@
     "components/**/*",
     "utils/**/*",
     "theme/**/*",
-    "declarations.d.ts"
+    "declarations.d.ts",
+    "index.ts",
+    ".storybook/**/*",
+    "*.ts",
+    "*.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "scripts",
-    "tests",
-    "docs",
-    "**/*.test.tsx"
-  ]
+  "exclude": ["node_modules", "dist", "scripts", "tests", "docs"]
 }

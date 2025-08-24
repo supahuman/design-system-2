@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "pnpm"
+
+      # Check if pnpm-lock.yaml exists
+      - name: Check for pnpm-lock.yaml
+        id: check-lock
+        run: |
+          if [ -f "pnpm-lock.yaml" ]; then
+            echo "LOCK_EXISTS=true" >> $GITHUB_OUTPUT
+          else
+            echo "LOCK_EXISTS=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get pnpm store directory and setup cache
+        if: steps.check-lock.outputs.LOCK_EXISTS == 'true'
+        shell: bash
+        id: pnpm-cache
+        run: |
+          STORE_PATH=$(pnpm store path --silent)
+          echo "STORE_PATH=${STORE_PATH}" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        if: steps.check-lock.outputs.LOCK_EXISTS == 'true'
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate theme
+        run: pnpm generate:theme
+
+      - name: Run tests
+        run: pnpm test

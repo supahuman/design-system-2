@@ -7,7 +7,7 @@ This guide provides examples of how to use the components in this design system.
 Import the theme CSS in your application entry point:
 
 ```tsx
-import "@your-org/design-system/dist/theme/theme.css";
+import '@your-org/design-system/dist/theme/theme.css';
 ```
 
 ## Components
