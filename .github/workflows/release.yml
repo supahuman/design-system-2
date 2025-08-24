@@ -22,8 +22,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
-          cache: "pnpm"
+          node-version: '18'
+          cache: 'pnpm'
 
       # Check if pnpm-lock.yaml exists
       - name: Check for pnpm-lock.yaml
@@ -57,6 +57,9 @@ jobs:
 
       - name: Generate theme
         run: pnpm generate:theme
+
+      - name: Check code formatting
+        run: pnpm format:check
 
       - name: Run tests
         run: pnpm test
