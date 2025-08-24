@@ -2,8 +2,23 @@
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import reactPlugin from 'eslint-plugin-react';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
+  // Prettier configuration
+  {
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  },
+
+  // Apply prettier config to all files
+  prettierConfig,
+  
   {
     ignores: ['dist/', 'node_modules/', '**/*.d.ts'],
   },
@@ -36,9 +51,9 @@ export default [
 
       // General rules
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      semi: ["error", "always"],
-      quotes: ["error", "single", { avoidEscape: true }],
-      "comma-dangle": ["error", "always-multiline"],
+      semi: ['error', 'always'],
+      quotes: ['error', 'single', { avoidEscape: true }],
+      'comma-dangle': ['error', 'always-multiline'],
     },
   },
   // JavaScript rules
