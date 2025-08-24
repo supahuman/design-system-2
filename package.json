@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "analyze": "size-limit --why",
+    "analyze": "pnpm build && size-limit --why",
     "docs": "npm run build-storybook"
   },
   "dependencies": {
@@ -37,6 +37,8 @@
     "@babel/preset-typescript": "^7.27.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@size-limit/esbuild": "^11.2.0",
+    "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.0.1",
     "@storybook/addon-a11y": "^7.6.12",
     "@storybook/addon-essentials": "^7.6.12",
@@ -73,7 +75,11 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "10 KB"
+      "limit": "10 KB",
+      "using": [
+        "@size-limit/esbuild",
+        "@size-limit/esbuild-why"
+      ]
     }
   ],
   "repository": {
