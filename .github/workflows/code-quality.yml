@@ -111,4 +111,4 @@ jobs:
         run: pnpm build
 
       - name: Analyze bundle size
-        run: pnpm size-limit --why
+        run: pnpm analyze

@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "analyze": "pnpm build && size-limit --why",
+    "analyze": "pnpm build && pnpm size-limit --why",
     "docs": "npm run build-storybook"
   },
   "dependencies": {
@@ -75,11 +75,7 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "10 KB",
-      "using": [
-        "@size-limit/esbuild",
-        "@size-limit/esbuild-why"
-      ]
+      "limit": "10 KB"
     }
   ],
   "repository": {
