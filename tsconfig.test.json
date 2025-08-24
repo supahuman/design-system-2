@@ -3,9 +3,5 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
-  "include": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "jest.setup.ts"
-  ]
+  "include": ["**/*.test.ts", "**/*.test.tsx", "jest.setup.ts"]
 }
