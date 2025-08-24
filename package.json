@@ -1,0 +1,90 @@
+{
+  "name": "@your-org/design-system",
+  "version": "1.0.0",
+  "description": "A modern, accessible design system built with TypeScript, React, and CSS Modules",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run clean && npm run generate:theme && tsup",
+    "build:legacy": "npm run clean && npm run generate:theme && tsc",
+    "clean": "rimraf dist",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint --ext .ts,.tsx .",
+    "generate-theme-css": "node ./scripts/generate-theme-css.js",
+    "generate:theme": "node scripts/generate-theme.js",
+    "prepublishOnly": "npm run test && npm run build",
+    "prepare": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "analyze": "size-limit --why",
+    "docs": "npm run build-storybook"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@size-limit/preset-small-lib": "^11.0.1",
+    "@storybook/addon-a11y": "^7.6.12",
+    "@storybook/addon-essentials": "^7.6.12",
+    "@storybook/addon-interactions": "^7.6.12",
+    "@storybook/addon-links": "^7.6.12",
+    "@storybook/blocks": "^7.6.12",
+    "@storybook/react": "^7.6.12",
+    "@storybook/react-vite": "^7.6.12",
+    "@storybook/test": "^7.6.12",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "babel-jest": "^30.0.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "postcss": "^8.4.35",
+    "rimraf": "^5.0.5",
+    "size-limit": "^11.0.1",
+    "storybook": "^7.6.12",
+    "ts-jest": "^29.4.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5",
+    "vite": "^4.5.14"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "10 KB"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/design-system.git"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "components",
+    "accessibility",
+    "atomic-design"
+  ],
+  "author": "Your Organization",
+  "license": "MIT"
+}

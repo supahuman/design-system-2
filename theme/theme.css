@@ -1,0 +1,18 @@
+:root {
+  --colors-primary: #0070f3;
+  --colors-secondary: #1A1A1A;
+  --colors-background: #ffffff;
+  --colors-text: #333333;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --typography-fontFamily: Inter, Arial, sans-serif;
+  --typography-fontSize-sm: 12px;
+  --typography-fontSize-md: 16px;
+  --typography-fontSize-lg: 20px;
+  --typography-fontSize-xl: 24px;
+  --typography-fontWeight-regular: 400;
+  --typography-fontWeight-bold: 700;
+}

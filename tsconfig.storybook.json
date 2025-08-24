@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "components/**/*",
+    "utils/**/*",
+    "theme/**/*",
+    "declarations.d.ts",
+    ".storybook/**/*"
+  ]
+}

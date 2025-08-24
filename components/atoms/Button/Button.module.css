@@ -1,0 +1,44 @@
+.primary {
+  background: var(--colors-primary);
+  color: var(--colors-background);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 4px;
+  font-family: var(--typography-fontFamily);
+  font-size: var(--typography-fontSize-md);
+  font-weight: var(--typography-fontWeight-bold);
+  cursor: pointer;
+}
+
+.primary:disabled,
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: var(--colors-secondary);
+  color: var(--colors-background);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 4px;
+  font-family: var(--typography-fontFamily);
+  font-size: var(--typography-fontSize-md);
+  font-weight: var(--typography-fontWeight-regular);
+  cursor: pointer;
+}
+
+.small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--typography-fontSize-sm);
+}
+
+.medium {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--typography-fontSize-md);
+}
+
+.large {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: var(--typography-fontSize-lg);
+}
